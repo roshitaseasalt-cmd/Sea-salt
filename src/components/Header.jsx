@@ -10,7 +10,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="relative h-[72px] border-b border-[#1c1c1c]/10 bg-[#f2efe9] flex items-center justify-between px-4 sm:px-6 md:px-10 z-50 select-none">
+      <header className="relative h-[72px] border-b border-brand-dark/10 bg-[#f2efe9] flex items-center justify-between px-4 sm:px-6 md:px-10 z-50 select-none">
         {/* Left: Hamburger */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
@@ -24,13 +24,13 @@ export default function Header() {
                 : { rotate: 0, y: 0, width: 24 }
             }
             transition={{ duration: 0.25 }}
-            className="w-6 h-[1px] bg-[#1c1c1c]"
+            className="w-6 h-px bg-brand-dark"
           />
 
           <motion.span
             animate={menuOpen ? { opacity: 0 } : { opacity: 1 }}
             transition={{ duration: 0.2 }}
-            className="w-6 h-[1px] bg-[#1c1c1c]"
+            className="w-6 h-px bg-brand-dark"
           />
 
           <motion.span
@@ -40,7 +40,7 @@ export default function Header() {
                 : { rotate: 0, y: 0, width: 16 }
             }
             transition={{ duration: 0.25 }}
-            className="h-[1px] bg-[#1c1c1c] group-hover:w-6 transition-all"
+            className="h-px bg-brand-dark group-hover:w-6 transition-all"
           />
         </button>
 
@@ -58,7 +58,6 @@ export default function Header() {
             className="
               h-fit
               w-auto
-              max-w-[180px]
               sm:max-w-[160px]
               md:max-w-[240px]
               lg:max-w-[300px]
@@ -68,22 +67,22 @@ export default function Header() {
         </Link>
 
         {/* Right Links */}
-        <div className="flex items-center gap-2 sm:gap-3 md:gap-4 text-[11px] sm:text-xs md:text-sm font-serif text-[#1c1c1c]/80 z-20">
+        <div className="flex items-center gap-2 sm:gap-3 md:gap-4 text-[11px] sm:text-xs md:text-sm font-serif text-brand-dark/80 z-20">
           <a
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-[#1c1c1c] transition-colors"
+            className="hover:text-brand-dark transition-colors"
           >
             <span className="hidden sm:inline">Instagram</span>
             <span className="sm:hidden">IG</span>
           </a>
 
-          <span className="text-[#1c1c1c]/20">|</span>
+          <span className="text-brand-dark/20">|</span>
 
           <a
             href="mailto:hello@seasaltstudio.com"
-            className="hover:text-[#1c1c1c] transition-colors"
+            className="hover:text-brand-dark transition-colors"
           >
             Email
           </a>
