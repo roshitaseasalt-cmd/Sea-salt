@@ -57,14 +57,14 @@ export default function Contact() {
                 </div>
                 <div>
                   <span className="block text-xs uppercase tracking-widest text-[#1c1c1c]/60 font-semibold mb-1 font-sans-elegant">Call Us</span>
-                  <a href="tel:+919879598000" className="text-xl hover:text-amber-800 transition-colors font-serif-elegant">
-                    +91 98795 98000
+                  <a href="tel:+917094744989" className="text-xl hover:text-amber-800 transition-colors font-serif-elegant">
+                    +91 70947 44989
                   </a>
                 </div>
                 <div>
                   <span className="block text-xs uppercase tracking-widest text-[#1c1c1c]/60 font-semibold mb-1 font-sans-elegant">Our Studio</span>
                   <span className="text-xl block font-serif-elegant">
-                    Surat, India
+                    Bangalore, India
                   </span>
                 </div>
               </motion.div>

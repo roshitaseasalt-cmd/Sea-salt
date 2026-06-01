@@ -44,13 +44,6 @@ export default function Home() {
             quiet experience.
           </motion.h1>
           
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.6 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="w-10 sm:w-12 h-[1px] bg-white mb-3 sm:mb-5"
-          />
-          
           <motion.p 
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
