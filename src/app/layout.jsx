@@ -1,6 +1,8 @@
-import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
+import { Cormorant_Garamond, Montserrat } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-serif",
@@ -9,7 +11,7 @@ const cormorant = Cormorant_Garamond({
   style: ["normal", "italic"],
 });
 
-const jakarta = Plus_Jakarta_Sans({
+const montserrat = Montserrat({
   variable: "--font-sans",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
@@ -24,11 +26,17 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${cormorant.variable} ${jakarta.variable} h-full antialiased`}
+      className={`${cormorant.variable} ${montserrat.variable} antialiased`}
     >
-      <body className="h-full flex flex-col bg-[#f3efe6] text-[#1c1c1c] font-sans">
+      <body className="flex flex-col font-sans">
         <SmoothScroll>
-          {children}
+          <div className="min-h-screen flex flex-col w-full">
+            <Header />
+            <main className="flex-1 flex flex-col w-full">
+              {children}
+            </main>
+            <Footer />
+          </div>
         </SmoothScroll>
       </body>
     </html>

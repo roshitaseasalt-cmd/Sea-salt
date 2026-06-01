@@ -7,10 +7,11 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [projectsHovered, setProjectsHovered] = useState(false);
 
   return (
     <>
-      <header className="relative h-[72px] border-b border-brand-dark/10 bg-[#f2efe9] flex items-center justify-between px-4 sm:px-6 md:px-10 z-50 select-none">
+      <header className="relative h-[72px] border-b border-brand-dark/10 bg-[#f4f1ec] flex items-center justify-between px-4 sm:p-6 md:p-10 z-50 select-none">
         {/* Left: Hamburger */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
@@ -97,31 +98,99 @@ export default function Header() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-[#f2efe9] z-40 flex flex-col justify-center items-center"
+            className="fixed inset-0 bg-[#f4f1ec] z-40 flex flex-col justify-center items-center"
           >
             <nav className="flex flex-col gap-6 text-center">
               {[
                 { name: "Home", href: "/" },
-                { name: "Selected Work", href: "/projects" },
+                { name: "Selected Work", href: "/projects?tab=architecture" },
                 { name: "Philosophy", href: "/philosophy" },
                 { name: "Studio (About)", href: "/about" },
                 { name: "Contact", href: "/contact" },
-              ].map((item, index) => (
-                <motion.div
-                  key={item.name}
-                  initial={{ y: 20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.1 + index * 0.1 }}
-                >
-                  <Link
-                    href={item.href}
-                    onClick={() => setMenuOpen(false)}
-                    className="font-serif text-3xl md:text-4xl hover:text-amber-800 transition-colors"
+              ].map((item, index) => {
+                if (item.name === "Selected Work") {
+                  return (
+                    <motion.div
+                      key={item.name}
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ delay: 0.1 + index * 0.1 }}
+                      className="relative flex flex-col items-center"
+                      onMouseEnter={() => setProjectsHovered(true)}
+                      onMouseLeave={() => setProjectsHovered(false)}
+                    >
+                      <Link
+                        href={item.href}
+                        onClick={() => setMenuOpen(false)}
+                        className="font-serif text-3xl md:text-4xl hover:text-amber-800 transition-colors"
+                      >
+                        {item.name}
+                      </Link>
+
+                      {/* Desktop Hover Submenu */}
+                      <div
+                        className={`hidden md:flex flex-col gap-2 mt-2.5 transition-all duration-300 overflow-hidden ${projectsHovered ? "max-h-24 opacity-100" : "max-h-0 opacity-0 pointer-events-none"}`}
+                      >
+                        <Link
+                          href="/projects?tab=architecture"
+                          onClick={() => {
+                            setProjectsHovered(false);
+                            setMenuOpen(false);
+                          }}
+                          className="font-sans text-[14px] hover:text-amber-800 tracking-widest uppercase text-brand-dark font-medium transition-colors py-0.5"
+                        >
+                          Architecture
+                        </Link>
+                        <Link
+                          href="/projects?tab=interiors"
+                          onClick={() => {
+                            setProjectsHovered(false);
+                            setMenuOpen(false);
+                          }}
+                          className="font-sans text-[14px] hover:text-amber-800 tracking-widest uppercase text-brand-dark font-medium transition-colors py-0.5"
+                        >
+                          Interior Design
+                        </Link>
+                      </div>
+
+                      {/* Mobile Visible Submenu */}
+                      <div className="flex md:hidden flex-col gap-1.5 mt-2">
+                        <Link
+                          href="/projects?tab=architecture"
+                          onClick={() => setMenuOpen(false)}
+                          className="font-sans text-[14px] hover:text-amber-800 tracking-widest uppercase text-brand-dark font-medium transition-colors py-0.5"
+                        >
+                          Architecture
+                        </Link>
+                        <Link
+                          href="/projects?tab=interiors"
+                          onClick={() => setMenuOpen(false)}
+                          className="font-sans text-[14px] hover:text-amber-800 tracking-widest uppercase text-brand-dark font-medium transition-colors py-0.5"
+                        >
+                          Interior Design
+                        </Link>
+                      </div>
+                    </motion.div>
+                  );
+                }
+
+                return (
+                  <motion.div
+                    key={item.name}
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.1 + index * 0.1 }}
                   >
-                    {item.name}
-                  </Link>
-                </motion.div>
-              ))}
+                    <Link
+                      href={item.href}
+                      onClick={() => setMenuOpen(false)}
+                      className="font-serif text-3xl md:text-4xl hover:text-amber-800 transition-colors"
+                    >
+                      {item.name}
+                    </Link>
+                  </motion.div>
+                );
+              })}
             </nav>
           </motion.div>
         )}
