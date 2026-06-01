@@ -3,11 +3,14 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [projectsHovered, setProjectsHovered] = useState(false);
+  const pathname = usePathname();
+  const isContactOrPhilosophy = pathname === "/contact" || pathname === "/philosophy";
 
   return (
     <>
@@ -68,25 +71,39 @@ export default function Header() {
         </Link>
 
         {/* Right Links */}
-        <div className="flex items-center gap-2 sm:gap-3 md:gap-4 text-[11px] sm:text-xs md:text-sm font-serif text-brand-dark/80 z-20">
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-brand-dark transition-colors"
-          >
-            <span className="hidden sm:inline">Instagram</span>
-            <span className="sm:hidden">IG</span>
-          </a>
+        <div className="z-20">
+          {isContactOrPhilosophy ? (
+            <Link
+              href="/projects?tab=architecture"
+              className="text-[11px] sm:text-xs tracking-widest font-sans uppercase font-medium text-brand-dark/80 hover:text-brand-dark transition-colors flex items-center gap-1 group"
+            >
+              View Projects{" "}
+              <span className="font-light group-hover:translate-x-1 transition-transform">
+                —→
+              </span>
+            </Link>
+          ) : (
+            <div className="flex items-center gap-2 sm:gap-3 md:gap-4 text-[11px] sm:text-xs md:text-sm font-serif text-brand-dark/80">
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-brand-dark transition-colors"
+              >
+                <span className="hidden sm:inline">Instagram</span>
+                <span className="sm:hidden">IG</span>
+              </a>
 
-          <span className="text-brand-dark/20">|</span>
+              <span className="text-brand-dark/20">|</span>
 
-          <a
-            href="mailto:hello@seasaltstudio.com"
-            className="hover:text-brand-dark transition-colors"
-          >
-            Email
-          </a>
+              <a
+                href="mailto:hello@seasaltstudio.com"
+                className="hover:text-brand-dark transition-colors"
+              >
+                Email
+              </a>
+            </div>
+          )}
         </div>
       </header>
 

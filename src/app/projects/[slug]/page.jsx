@@ -13,9 +13,9 @@ export default function ProjectDetail({ params }) {
   if (!project) {
     return (
       <PageTransition>
-        <div className="min-h-screen bg-[#f4f1ec] text-[#494845] flex flex-col justify-center items-center font-sans py-24 text-center px-6">
+        <div className="flex-1 bg-[#f4f1ec] text-[#494845] flex flex-col justify-center items-center font-sans py-24 text-center px-6">
           <h1 className="text-3xl font-serif mb-4">Project Not Found</h1>
-          <p className="text-[#494845]/70 mb-8 font-light max-w-sm">The project you are looking for does not exist or has been moved.</p>
+          <p className="text-[#494845] mb-8 font-light max-w-sm">The project you are looking for does not exist or has been moved.</p>
           <Link href="/projects" className="px-6 py-2.5 rounded-full border border-[#dad7d1] hover:bg-[#dad7d1]/35 text-xs tracking-wider uppercase font-medium transition-colors">
             Back to Projects
           </Link>
@@ -28,7 +28,7 @@ export default function ProjectDetail({ params }) {
   const backLink = project.category === "Interiors" ? "/projects?tab=interiors" : "/projects?tab=architecture";
 
   return (
-    <div className="w-full bg-[#f4f1ec] text-[#494845] font-sans min-h-screen py-16 md:py-24 transition-colors duration-300">
+    <div className="w-full bg-[#f4f1ec] text-[#494845] font-sans flex-1 flex flex-col py-16 md:py-24 transition-colors duration-300">
       <PageTransition>
         <article className="max-w-7xl mx-auto px-6 md:px-12 w-full flex-1">
           {/* Breadcrumb / Back button */}

@@ -4,10 +4,11 @@
   --font-serif: var(--font-serif), serif;
   --font-sans: var(--font-sans), sans-serif;
   
-  --color-brand-sand: #f4f1ec;
+  --color-brand-sand: #F4F1EC;
   --color-brand-dark: #494845;
-  --color-brand-footer: #f4f1ec;
+  --color-brand-footer: #F4F1EC;
   --color-warm-grey : #DAD7D1;
+  
 }
 
 body {

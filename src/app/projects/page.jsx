@@ -35,7 +35,7 @@ function ProjectsList() {
   const currentProjects = projectsData[activeTab];
 
   return (
-    <div className="w-full bg-[#f4f1ec] text-brand-dark font-sans min-h-screen py-16 md:py-24 transition-colors duration-300">
+    <div className="w-full bg-[#f4f1ec] text-brand-dark font-sans flex-1 flex flex-col py-16 md:py-24 transition-colors duration-300">
       <PageTransition>
         <section className="max-w-7xl mx-auto px-6 md:px-12 w-full flex-1">
           
@@ -76,7 +76,7 @@ function ProjectsList() {
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    d="M20 20v-5h-.581m-15.36-2A8.001 8.001 0 112.79 12H5"
+                    d="M20 20v-5h-.581m-15.36-2A8.001 8.001 0 11.79 12H5"
                   />
                 </svg>
               </button>
