@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,9 +12,32 @@ export default function Header() {
   const pathname = usePathname();
   const isContactOrPhilosophy = pathname === "/contact" || pathname === "/philosophy";
 
+  const { scrollY } = useScroll();
+  const [hidden, setHidden] = useState(false);
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious() || 0;
+    if (latest > previous && latest > 150) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+  });
+
   return (
     <>
-      <header className="relative h-[72px] border-b border-brand-dark/10 bg-[#f4f1ec] flex items-center justify-between px-4 sm:p-6 md:p-10 z-50 select-none">
+      {/* Spacer to prevent content jump when header becomes fixed */}
+      <div className="h-[72px] w-full shrink-0" />
+      
+      <motion.header 
+        variants={{
+          visible: { y: 0 },
+          hidden: { y: "-100%" }
+        }}
+        animate={hidden ? "hidden" : "visible"}
+        transition={{ duration: 0.35, ease: "easeInOut" }}
+        className="fixed top-0 left-0 right-0 h-[72px] border-b border-brand-dark/10 bg-[#f4f1ec] flex items-center justify-between px-4 sm:p-6 md:p-10 z-50 select-none"
+      >
         {/* Left: Hamburger */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
@@ -105,7 +128,7 @@ export default function Header() {
             </div>
           )}
         </div>
-      </header>
+      </motion.header>
 
       {/* Fullscreen Menu */}
       <AnimatePresence>
@@ -122,7 +145,6 @@ export default function Header() {
                 { name: "Home", href: "/" },
                 { name: "Selected Work", href: "/projects?tab=architecture" },
                 { name: "Philosophy", href: "/philosophy" },
-                { name: "Studio (About)", href: "/about" },
                 { name: "Contact", href: "/contact" },
               ].map((item, index) => {
                 if (item.name === "Selected Work") {

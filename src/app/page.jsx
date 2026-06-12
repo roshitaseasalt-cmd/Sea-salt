@@ -57,8 +57,8 @@ export default function Home() {
             Selected Work <span className="font-light group-hover:translate-x-1 transition-transform">→</span>
           </Link>
           <span className="text-white/20 select-none">|</span>
-          <Link href="/about" className="hover:text-white/70 transition-colors flex items-center gap-1.5 group">
-            Studio <span className="font-light group-hover:translate-x-1 transition-transform">→</span>
+          <Link href="/philosophy" className="hover:text-white/70 transition-colors flex items-center gap-1.5 group">
+            Philosophy <span className="font-light group-hover:translate-x-1 transition-transform">→</span>
           </Link>
           <span className="text-white/20 select-none">|</span>
           <Link href="/contact" className="hover:text-white/70 transition-colors flex items-center gap-1.5 group">

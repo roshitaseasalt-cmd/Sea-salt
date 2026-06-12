@@ -141,7 +141,7 @@ function ProjectsList() {
                     <div className="lg:col-span-8 pb-1 flex items-start">
                       <Link href={`/projects/${project.slug}`} className="block w-full overflow-hidden aspect-[16/10] relative group select-none">
                         <Image
-                          src={project.image}
+                          src={project.images?.hero}
                           alt={project.title}
                           fill
                           sizes="(max-width: 1024px) 100vw, 58vw"
