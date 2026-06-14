@@ -54,6 +54,30 @@ export const projectsData = {
         "A premium private residence constructed using raw brick lattices and central courtyard layout systems to facilitate natural ventilation.",
       images: {
         hero: "/projects/02. House of Courts_ARCHITECTURE/01. Hero Image.png",
+        plan: "/projects/02. House of Courts_ARCHITECTURE/02. Drawing 01.png",
+        views: [
+          "/projects/02. House of Courts_ARCHITECTURE/03. View -01.png",
+          "/projects/02. House of Courts_ARCHITECTURE/04. View 02.png",
+          "/projects/02. House of Courts_ARCHITECTURE/04. View 03.png",
+        ],
+        moments: [
+          {
+            src: "/projects/02. House of Courts_ARCHITECTURE/05. Moments 01.jpg",
+            caption: "Brick lattices",
+          },
+          {
+            src: "/projects/02. House of Courts_ARCHITECTURE/05. Moments 02.jpg",
+            caption: "Central courtyard",
+          },
+          {
+            src: "/projects/02. House of Courts_ARCHITECTURE/05. Moments 03.jpg",
+            caption: "Natural ventilation",
+          },
+          {
+            src: "/projects/02. House of Courts_ARCHITECTURE/05. Moments 04.jpg",
+            caption: "Raw materials",
+          },
+        ],
       },
     },
     {
@@ -68,6 +92,30 @@ export const projectsData = {
         "An architectural exploration using massive local granite blocks and concrete canopies looking out onto a landscape pool.",
       images: {
         hero: "/projects/03. Residence at Hospet_ARCHITECTURE/01. Hero Image.jpg",
+        plan: "/projects/03. Residence at Hospet_ARCHITECTURE/02. Drawing.jpg",
+        views: [
+          "/projects/03. Residence at Hospet_ARCHITECTURE/03.Long strip view.jpg",
+          "/projects/03. Residence at Hospet_ARCHITECTURE/04.Spatial system 01.jpg",
+          "/projects/03. Residence at Hospet_ARCHITECTURE/04.Spatial system 02.jpg",
+        ],
+        moments: [
+          {
+            src: "/projects/03. Residence at Hospet_ARCHITECTURE/05. MOMENTS 01.png",
+            caption: "Granite blocks",
+          },
+          {
+            src: "/projects/03. Residence at Hospet_ARCHITECTURE/05. MOMENTS 02.png",
+            caption: "Concrete canopy",
+          },
+          {
+            src: "/projects/03. Residence at Hospet_ARCHITECTURE/05. MOMENTS 03.png",
+            caption: "Landscape pool",
+          },
+          {
+            src: "/projects/03. Residence at Hospet_ARCHITECTURE/05. MOMENTS 04.png",
+            caption: "Spatial depth",
+          },
+        ],
       },
     },
     {
@@ -82,6 +130,29 @@ export const projectsData = {
         "A hillside retreat built on steep topography featuring cantilevered steel volumes and sustainable wood cladding.",
       images: {
         hero: "/projects/04. Resort at Kalimpong_ARCHITECTURE/01. Hero Image.png",
+        plan: "/projects/04. Resort at Kalimpong_ARCHITECTURE/02. Drawing.png",
+        views: [
+          "/projects/04. Resort at Kalimpong_ARCHITECTURE/03. Long view.png",
+          "/projects/04. Resort at Kalimpong_ARCHITECTURE/04.Section.png",
+        ],
+        moments: [
+          {
+            src: "/projects/04. Resort at Kalimpong_ARCHITECTURE/05. Moments 01.jpg",
+            caption: "Hillside retreat",
+          },
+          {
+            src: "/projects/04. Resort at Kalimpong_ARCHITECTURE/05. Moments 02.png",
+            caption: "Cantilevered volumes",
+          },
+          {
+            src: "/projects/04. Resort at Kalimpong_ARCHITECTURE/05. Moments 03.png",
+            caption: "Steel structure",
+          },
+          {
+            src: "/projects/04. Resort at Kalimpong_ARCHITECTURE/05. Moments 04.png",
+            caption: "Wood cladding",
+          },
+        ],
       },
     },
   ],
@@ -140,6 +211,29 @@ export const projectsData = {
         "A modern dental wellness space centered around a custom concrete reception counter, glass block wall elements, and soft warm textures.",
       images: {
         hero: "/projects/06. Smile Mantra DentaL Clinic_INTERIOR/01. Hero Image.jpeg",
+        plan: "/projects/06. Smile Mantra DentaL Clinic_INTERIOR/02. Drawings.png",
+        views: [
+          "/projects/06. Smile Mantra DentaL Clinic_INTERIOR/03. View 01.png",
+          "/projects/06. Smile Mantra DentaL Clinic_INTERIOR/03. View 02.png",
+        ],
+        moments: [
+          {
+            src: "/projects/06. Smile Mantra DentaL Clinic_INTERIOR/04. Moments 01.jpg",
+            caption: "Concrete reception",
+          },
+          {
+            src: "/projects/06. Smile Mantra DentaL Clinic_INTERIOR/04. Moments 02.jpg",
+            caption: "Glass blocks",
+          },
+          {
+            src: "/projects/06. Smile Mantra DentaL Clinic_INTERIOR/04. Moments 03.jpg",
+            caption: "Warm textures",
+          },
+          {
+            src: "/projects/06. Smile Mantra DentaL Clinic_INTERIOR/04. Moments 04.jpg",
+            caption: "Materiality",
+          },
+        ],
       },
     },
   ],
