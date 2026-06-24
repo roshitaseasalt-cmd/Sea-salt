@@ -4,6 +4,7 @@ import SmoothScroll from "@/components/SmoothScroll";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-serif",
@@ -40,6 +41,7 @@ export default function RootLayout({ children }) {
           </div>
         </SmoothScroll>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
