@@ -46,6 +46,8 @@ export default function Philosophy() {
                 loop
                 muted
                 playsInline
+                preload="auto"
+                disableRemotePlayback
                 className="w-full h-full object-cover"
               />
             </motion.div>

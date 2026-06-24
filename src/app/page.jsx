@@ -1,13 +1,38 @@
 "use client";
  
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { PulseLoader } from "react-spinners";
  
 export default function Home() {
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+
+  useEffect(() => {
+    // Fallback: ensure the loader doesn't stay forever if the video event doesn't fire
+    const timer = setTimeout(() => {
+      setIsVideoLoaded(true);
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="flex-1 relative overflow-hidden bg-zinc-900 select-none">
       
+      {/* Loading Screen */}
+      <AnimatePresence>
+        {!isVideoLoaded && (
+          <motion.div
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+            className="absolute inset-0 z-50 flex items-center justify-center bg-zinc-900"
+          >
+            <PulseLoader color="#ffffff" size={10} speedMultiplier={0.7} />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Background Atmosphere Video */}
       <video
         src="/Home page video.mp4"
@@ -15,6 +40,7 @@ export default function Home() {
         loop
         muted
         playsInline
+        onLoadedData={() => setIsVideoLoaded(true)}
         className="absolute inset-0 w-full h-full object-cover"
       />
       
