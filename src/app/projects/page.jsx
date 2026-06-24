@@ -35,7 +35,7 @@ function ProjectsList() {
   const currentProjects = projectsData[activeTab];
 
   return (
-    <div className="w-full bg-[#f4f1ec] text-brand-dark font-sans flex-1 flex flex-col py-16 md:py-24 transition-colors duration-300">
+    <div className="w-full bg-brand-sand text-brand-dark font-sans flex-1 flex flex-col py-16 md:py-24 transition-colors duration-300">
       <PageTransition>
         <section className="max-w-7xl mx-auto px-6 md:px-12 w-full flex-1">
           
@@ -45,7 +45,7 @@ function ProjectsList() {
               <h1 className="text-[40px] font-serif font-semibold text-brand-dark leading-none mb-3 tracking-wide select-none">
                 {activeTab === "architecture" ? "Architecture" : "Interiors"}
               </h1>
-              <div className="w-8 h-px bg-brand-dark mb-5" />
+             
               <p className="text-[12px] font-sans font-normal text-brand-dark leading-relaxed max-w-[280px] select-none">
                 {activeTab === "architecture" 
                   ? "Selected works across landscape, hospitality and residential environments." 
@@ -58,27 +58,16 @@ function ProjectsList() {
             <div className="pt-2 select-none">
               <button
                 onClick={toggleTab}
-                className="w-11 h-11 rounded-full border border-warm-grey bg-transparent hover:bg-[#dad7d1]/35 hover:border-bratext-brand-dark/40 transition-all duration-300 text-brand-dark flex items-center justify-center focus:outline-none group cursor-pointer shadow-none"
+                className="w-11 h-11 rounded-full  bg-transparent hover:bg-[#dad7d1]/35 hover:border-bratext-brand-dark/40 transition-all duration-300 text-brand-dark flex items-center justify-center focus:outline-none group cursor-pointer shadow-none relative"
                 title={`Switch to ${activeTab === "architecture" ? "Interiors" : "Architecture"}`}
               >
-                <svg
-                  className="w-5 h-5 text-brand-dark group-hover:rotate-180 transition-transform duration-700 ease-out"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.25"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 12H19"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M20 20v-5h-.581m-15.36-2A8.001 8.001 0 11.79 12H5"
-                  />
-                </svg>
+                <Image
+                  src="/icons/TOGGLE ICON.png"
+                  alt="Toggle icon"
+                  width={96}
+                  height={96}
+                  className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 max-w-none object-cover transition-transform duration-700 ease-out ${activeTab === "interiors" ? "rotate-180" : "rotate-0"}`}
+                />
               </button>
             </div>
           </div>
@@ -165,7 +154,7 @@ function ProjectsList() {
 export default function Projects() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen bg-[#f4f1ec] text-brand-dark flex items-center justify-center font-serif text-xl">
+      <div className="min-h-screen bg-brand-sand text-brand-dark flex items-center justify-center font-serif text-xl">
         Loading...
       </div>
     }>

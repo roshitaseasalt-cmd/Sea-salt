@@ -16,7 +16,7 @@ export const projectsData = {
         "A place for contemplation, learning and inner growth — where architecture becomes a silent companion.",
       images: {
         hero: "/projects/01. Sri Aurobindo Life Center_ARCHITECTURE/01. Hero Image.jpg",
-        plan: "/projects/01. Sri Aurobindo Life Center_ARCHITECTURE/02. Drawing.jpg",
+        plan: "/projects/01. Sri Aurobindo Life Center_ARCHITECTURE/02. Drawing.png",
         views: [
           "/projects/01. Sri Aurobindo Life Center_ARCHITECTURE/03. VIEW 01.jpg",
           "/projects/01. Sri Aurobindo Life Center_ARCHITECTURE/03. VIEW 02.jpeg",
@@ -78,7 +78,9 @@ export const projectsData = {
             caption: "Raw materials",
           },
         ],
+        sectionDrawing: "/projects/02. House of Courts_ARCHITECTURE/Section Drawing.png",
       },
+      blockquote: "A home defined by its courts — where architecture, landscape and light exist in quiet balance.",
     },
     {
       slug: "residence-at-hospet",
@@ -92,11 +94,11 @@ export const projectsData = {
         "An architectural exploration using massive local granite blocks and concrete canopies looking out onto a landscape pool.",
       images: {
         hero: "/projects/03. Residence at Hospet_ARCHITECTURE/01. Hero Image.jpg",
-        plan: "/projects/03. Residence at Hospet_ARCHITECTURE/02. Drawing.jpg",
+        plan: "/projects/03. Residence at Hospet_ARCHITECTURE/02. Drawing.png",
         views: [
-          "/projects/03. Residence at Hospet_ARCHITECTURE/03.Long strip view.jpg",
-          "/projects/03. Residence at Hospet_ARCHITECTURE/04.Spatial system 01.jpg",
-          "/projects/03. Residence at Hospet_ARCHITECTURE/04.Spatial system 02.jpg",
+          "/projects/03. Residence at Hospet_ARCHITECTURE/03.Long strip view.png",
+          "/projects/03. Residence at Hospet_ARCHITECTURE/04.Spatial system 01.png",
+          "/projects/03. Residence at Hospet_ARCHITECTURE/04.Spatial system 02.png",
         ],
         moments: [
           {
@@ -117,6 +119,7 @@ export const projectsData = {
           },
         ],
       },
+      blockquote: "Architecture emerges from place, shaped by light, wind and the passage of time.",
     },
     {
       slug: "resort-at-kalimpong",
@@ -129,7 +132,7 @@ export const projectsData = {
       details:
         "A hillside retreat built on steep topography featuring cantilevered steel volumes and sustainable wood cladding.",
       images: {
-        hero: "/projects/04. Resort at Kalimpong_ARCHITECTURE/01. Hero Image.png",
+        hero: "/projects/04. Resort at Kalimpong_ARCHITECTURE/Hero image.png",
         plan: "/projects/04. Resort at Kalimpong_ARCHITECTURE/02. Drawing.png",
         views: [
           "/projects/04. Resort at Kalimpong_ARCHITECTURE/03. Long view.png",
@@ -154,6 +157,7 @@ export const projectsData = {
           },
         ],
       },
+      blockquote: "Atmosphere emerges through materials, proportion and movement.",
     },
   ],
   interiors: [
@@ -172,7 +176,7 @@ export const projectsData = {
       blockquote:
         "Atmosphere emerges through shadow, texture and ritual movement.",
       images: {
-        hero: "/projects/05. Courtyard House_INTERIOR/01_Hero image.jpg",
+        hero: "/projects/05. Courtyard House_INTERIOR/Hero Image.png",
         plan: "/projects/05. Courtyard House_INTERIOR/02_Drawing.png",
         views: [
           "/projects/05. Courtyard House_INTERIOR/03_View 01.png",
@@ -235,6 +239,7 @@ export const projectsData = {
           },
         ],
       },
+      blockquote: "A space designed to soften anxiety through light, calm and care.",
     },
   ],
 };

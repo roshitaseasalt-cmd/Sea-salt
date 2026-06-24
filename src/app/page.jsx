@@ -2,21 +2,20 @@
  
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { motion } from "framer-motion";
  
 export default function Home() {
   return (
     <div className="flex-1 relative overflow-hidden bg-zinc-900 select-none">
       
-      {/* Background Atmosphere Image */}
-      <Image
-        src="/hero_background.png"
-        alt="Modern Concrete Villa in Lush Jungle Nestled Beside Reflective Pond"
-        fill
-        sizes="100vw"
-        className="object-cover"
-        priority
+      {/* Background Atmosphere Video */}
+      <video
+        src="/Home page video.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
       />
       
       {/* Contrast Overlay Wash */}
