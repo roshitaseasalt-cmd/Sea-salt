@@ -83,7 +83,7 @@ export default function Header() {
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[64px] p-1 flex items-center justify-center overflow-hidden"
         >
           <Image
-            src="/sea salt logo.png"
+            src="/sea-salt-logo.png"
             alt="Sea Salt Studio Logo"
             width={500}
             height={64}
