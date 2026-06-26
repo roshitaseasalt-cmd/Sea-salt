@@ -49,7 +49,7 @@ function ProjectsList() {
               <p className="text-[12px] font-sans font-normal text-brand-dark leading-relaxed max-w-[280px] select-none">
                 {activeTab === "architecture" 
                   ? "Selected works across landscape, hospitality and residential environments." 
-                  : "Thoughtful interiors that balance materiality, normal and quiet detail."
+                  : "Thoughtful interiors that balance materiality with quiet detail."
                 }
               </p>
             </div>
@@ -113,16 +113,7 @@ function ProjectsList() {
                             {project.architect}
                           </span>
                         </div>
-                        {activeTab === "interiors" && project.year && (
-                          <div>
-                            <span className="block text-[11px] font-sans font-normal italic text-brand-dark/70 mb-0.5">
-                              Year
-                            </span>
-                            <span className="text-[13px] font-sans font-normal text-brand-dark">
-                              {project.year}
-                            </span>
-                          </div>
-                        )}
+                        {/* Year removed from interiors as requested */}
                       </div>
                     </div>
 

@@ -100,26 +100,26 @@ export const projectsData = {
         plan: "/projects/03. Residence at Hospet_ARCHITECTURE/02. Drawing.png",
         views: [
           "/projects/03. Residence at Hospet_ARCHITECTURE/interior-view.jpg",
+          "/projects/03. Residence at Hospet_ARCHITECTURE/03.Long strip view.png",
           "/projects/03. Residence at Hospet_ARCHITECTURE/04.Spatial system 01.png",
           "/projects/03. Residence at Hospet_ARCHITECTURE/04.Spatial system 02.png",
-          "/projects/03. Residence at Hospet_ARCHITECTURE/03.Long strip view.png",
         ],
         moments: [
           {
             src: "/projects/03. Residence at Hospet_ARCHITECTURE/05. MOMENTS 01.png",
-            caption: "Granite blocks",
+            caption: "Verdant descent",
           },
           {
             src: "/projects/03. Residence at Hospet_ARCHITECTURE/05. MOMENTS 02.png",
-            caption: "Concrete canopy",
+            caption: "Horizon bath",
           },
           {
             src: "/projects/03. Residence at Hospet_ARCHITECTURE/05. MOMENTS 03.png",
-            caption: "Landscape pool",
+            caption: "Dialogue between stone and timber",
           },
           {
             src: "/projects/03. Residence at Hospet_ARCHITECTURE/05. MOMENTS 04.png",
-            caption: "Spatial depth",
+            caption: "The vault",
           },
         ],
       },
@@ -131,11 +131,12 @@ export const projectsData = {
       title: "Resort at Kalimpong",
       location: "West Bengal, India",
       role: "Project Lead",
+      status: "Schematic stage",
       architect: "Malik Architecture, Mumbai",
-      year: "2025",
+      year: "2023",
       category: "Architecture",
       details:
-        "A hillside retreat built on steep topography featuring cantilevered steel volumes and sustainable wood cladding.",
+        "Facing the silent grandeur of Kanchenjunga, the retreat is held within the folds of a steep hillside, its architecture unfolding gently with the terrain.",
       images: {
         hero: "/projects/04. Resort at Kalimpong_ARCHITECTURE/Hero image.png",
         plan: "/projects/04. Resort at Kalimpong_ARCHITECTURE/02. Drawing.png",
@@ -146,24 +147,24 @@ export const projectsData = {
         moments: [
           {
             src: "/projects/04. Resort at Kalimpong_ARCHITECTURE/05. Moments 01.jpg",
-            caption: "Hillside retreat",
+            caption: "Stone meets mountain",
           },
           {
             src: "/projects/04. Resort at Kalimpong_ARCHITECTURE/05. Moments 02.png",
-            caption: "Cantilevered volumes",
+            caption: "Between eart and timber",
           },
           {
             src: "/projects/04. Resort at Kalimpong_ARCHITECTURE/05. Moments 03.png",
-            caption: "Steel structure",
+            caption: "The himalayan frame",
           },
           {
             src: "/projects/04. Resort at Kalimpong_ARCHITECTURE/05. Moments 04.png",
-            caption: "Wood cladding",
+            caption: "Dining at the edge",
           },
         ],
       },
       blockquote:
-        "Atmosphere emerges through materials, proportion and movement.",
+        "Where terrain meets architecture.",
     },
   ],
   interiors: [
@@ -171,16 +172,15 @@ export const projectsData = {
       slug: "courtyard-house",
       title: "Courtyard House",
       location: "Hyderabad, India",
-      status: "Built",
-      scope: "Interior Design",
-      role: "Interior Design",
+      status: "Interior finishing stage",
+      role: "Project Architect",
       architect: "Collective Project, Bengaluru",
-      year: "2023",
+      year: "2026",
       category: "Interiors",
       details:
         "A sequence of thresholds, crafted surfaces and filtered light — where materiality shapes atmosphere and movement.",
       blockquote:
-        "Atmosphere emerges through shadow, texture and ritual movement.",
+        "Atmosphere emerges through material and fine detail",
       images: {
         hero: "/projects/05. Courtyard House_INTERIOR/Hero Image.png",
         plan: "/projects/05. Courtyard House_INTERIOR/02_Drawing.png",
@@ -192,19 +192,19 @@ export const projectsData = {
         moments: [
           {
             src: "/projects/05. Courtyard House_INTERIOR/05_Moments 01a.jpg",
-            caption: "Carved stone",
+            caption: "The Niche",
           },
           {
             src: "/projects/05. Courtyard House_INTERIOR/05_Moments 01b.jpg",
-            caption: "Glass relief",
+            caption: "Quiet terrazo",
           },
           {
             src: "/projects/05. Courtyard House_INTERIOR/05_Moments 02.jpg",
-            caption: "Timber craft",
+            caption: "Hands in timber",
           },
           {
             src: "/projects/05. Courtyard House_INTERIOR/05_Moments 03.png",
-            caption: "Water reflections",
+            caption: "Carpet and stone",
           },
         ],
       },
@@ -212,13 +212,14 @@ export const projectsData = {
     {
       slug: "smile-mantra-dental-clinic",
       title: "Smile Mantra Dental Clinic",
-      location: "Surat, India",
-      role: "Project Architect",
-      architect: "Studio Naqshbandi",
-      year: "2024",
+      location: "Coimbatore, India",
+      role: "Principal Architect",
+       status: "Conceptual stage",
+      architect: "Sea salt, Bengaluru",
+      year: "2026",
       category: "Interiors",
       details:
-        "A modern dental wellness space centered around a custom concrete reception counter, glass block wall elements, and soft warm textures.",
+        "A calm thereupeutic space designed for ease and comfort - where every detail supports wellness.",
       images: {
         hero: "/projects/06. Smile Mantra DentaL Clinic_INTERIOR/01. Hero Image.jpeg",
         plan: "/projects/06. Smile Mantra DentaL Clinic_INTERIOR/02. Drawings.png",
@@ -229,19 +230,19 @@ export const projectsData = {
         moments: [
           {
             src: "/projects/06. Smile Mantra DentaL Clinic_INTERIOR/04. Moments 01.jpg",
-            caption: "Concrete reception",
+            caption: "Threshold of calm",
           },
           {
             src: "/projects/06. Smile Mantra DentaL Clinic_INTERIOR/04. Moments 02.jpg",
-            caption: "Glass blocks",
+            caption: "Nature within",
           },
           {
             src: "/projects/06. Smile Mantra DentaL Clinic_INTERIOR/04. Moments 03.jpg",
-            caption: "Warm textures",
+            caption: "Quiet care",
           },
           {
             src: "/projects/06. Smile Mantra DentaL Clinic_INTERIOR/04. Moments 04.jpg",
-            caption: "Materiality",
+            caption: "Filtered light",
           },
         ],
       },

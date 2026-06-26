@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
 
@@ -96,10 +97,9 @@ export default function Philosophy() {
                   emerges from context, craft and atmosphere.
                 </p>
                 <p>
-                  My work is informed by experiences across homes, hospitality,
-                  institutions and interiors, and by a belief that architecture
-                  gains depth through lived experience and an honest engagement
-                  with material and place.
+                  My work is informed by a belief that architecture gains depth
+                  through lived experience and an honest engagment with material
+                  and place.
                 </p>
                 <p
                   className="mt-1"
@@ -157,6 +157,18 @@ export default function Philosophy() {
               </div>
             </motion.div>
           </motion.div>
+
+          <div className="w-full flex justify-end mt-4">
+            <Link
+              href="/projects"
+              className="font-sans text-[9px] sm:text-[10px] tracking-[0.25em] uppercase font-normal text-[#122660] hover:text-brand-dark transition-colors flex items-center gap-3 shrink-0 pb-2"
+            >
+              VIEW ALL PROJECTS
+              <span className="text-[18px] leading-none font-normal block mt-[-2px]">
+                →
+              </span>
+            </Link>
+          </div>
         </div>
       </section>
     </PageTransition>

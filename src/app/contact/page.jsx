@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
@@ -27,14 +28,9 @@ export default function Contact() {
 
   return (
     <PageTransition>
-      <section className="bg-brand-sand w-full min-h-screen select-none">
+      <section className="bg-brand-sand w-full min-h-screen select-none pt-8">
         
-        {/* Architecture + Interiors + Landscape Header Text */}
-        <div className="w-full pt-8 pb-10 flex justify-center">
-          <span className="font-sans text-[9px] sm:text-[10px] tracking-[0.25em] text-brand-dark/80 uppercase font-bold">
-            ARCHITECTURE + INTERIORS + LANDSCAPE
-          </span>
-        </div>
+       
 
         {/* Main Hero Container */}
         <div className="max-w-6xl mx-auto px-6 sm:px-10 md:px-14 lg:px-16 pb-16 md:pb-24">
@@ -134,9 +130,9 @@ export default function Contact() {
             {/* Right Column: Tall Image */}
             <motion.div
               variants={itemVariants}
-              className="md:col-span-7 flex flex-col gap-3 w-full mt-10 md:mt-0"
+              className="md:col-span-7 flex flex-col gap-3 w-full h-fit mt-10 md:mt-0"
             >
-              <div className="w-full aspect-[2/3] relative bg-brand-dark/5 overflow-hidden">
+              <div className="w-full aspect-[2/4] flex justify-center relative bg-brand-dark/5 overflow-hidden">
                 <Image
                   src="/contact/contact-door.png"
                   alt="Custom door detail, Chennai"
@@ -154,6 +150,18 @@ export default function Contact() {
               </p>
             </motion.div>
           </motion.div>
+
+          <div className="w-full flex justify-end mt-8">
+            <Link
+              href="/projects"
+              className="font-sans text-[9px] sm:text-[10px] tracking-[0.25em] uppercase font-normal text-[#122660] hover:text-brand-dark transition-colors flex items-center gap-3 shrink-0 pb-2"
+            >
+              VIEW ALL PROJECTS
+              <span className="text-[18px] leading-none font-normal block mt-[-2px]">
+                →
+              </span>
+            </Link>
+          </div>
         </div>
       </section>
     </PageTransition>

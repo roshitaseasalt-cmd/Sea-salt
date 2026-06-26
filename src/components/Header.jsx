@@ -93,18 +93,8 @@ export default function Header() {
         </Link>
 
         {/* Right Links */}
-        <div className="z-20">
-          {isContactOrPhilosophy && (
-            <Link
-              href="/projects?tab=architecture"
-              className="text-[11px] sm:text-xs tracking-widest font-sans uppercase font-medium text-brand-dark/80 hover:text-brand-dark transition-colors flex items-center gap-1 group"
-            >
-              View Projects{" "}
-              <span className="font-light group-hover:translate-x-1 transition-transform">
-                —→
-              </span>
-            </Link>
-          )}
+        <div className="z-20 w-[120px] md:w-[150px]">
+          {/* View All Projects moved to bottom of specific pages */}
         </div>
       </motion.header>
 

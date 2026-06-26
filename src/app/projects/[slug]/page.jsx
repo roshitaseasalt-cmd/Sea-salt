@@ -337,13 +337,16 @@ export default function ProjectDetail({ params }) {
                   sizes="(max-width: 1280px) 100vw, 1280px"
                   className="object-cover"
                 />
+                {project.slug === "residence-at-hospet" && (
+                  <div className="absolute inset-0 bg-black/5 pointer-events-none" />
+                )}
               </div>
             </section>
           )}
 
         {/* Residence at Hospet - Spatial Systems */}
         {project.slug === "residence-at-hospet" && project.images?.views?.length > 1 && (
-          <section className="w-full max-w-screen-xl mx-auto px-6 sm:px-10 md:px-14 lg:px-16 mb-16 md:mb-24">
+          <section className="w-full px-2 sm:px-6 md:px-10 mb-16 md:mb-24">
             <div className="flex items-center gap-4 mb-8">
               <div className="w-4 sm:w-6 h-px bg-[#122660]" />
               <h3 className="font-sans text-[10px] sm:text-[11px] tracking-[0.25em] uppercase font-normal text-[#122660]">
@@ -351,7 +354,7 @@ export default function ProjectDetail({ params }) {
               </h3>
             </div>
             
-            <div className="flex flex-wrap justify-center md:justify-start gap-8 lg:gap-12">
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-4 lg:gap-6">
               {project.images.views.slice(1).map((src, index) => {
                 const title = index === 0 ? "Coffered Slab" : index === 1 ? "Jack Arch" : "Vault";
                 const desc = index === 0 
@@ -359,11 +362,16 @@ export default function ProjectDetail({ params }) {
                   : index === 1
                   ? "Jack arches span between supports to create wide column-free spaces and frame the view."
                   : "A vaulted entry compresses the approach and opens toward the horizon.";
+                
+                const itemsCount = project.images.views.slice(1).length;
+                const widthClasses = itemsCount === 2
+                  ? "md:w-[calc((100%-1rem)/2)] lg:w-[calc((100%-1.5rem)/2)]"
+                  : "md:w-[calc((100%-2rem)/3)] lg:w-[calc((100%-3rem)/3)]";
 
                 return (
-                  <div key={index} className="flex flex-col gap-6 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)] max-w-sm">
+                  <div key={index} className={`flex flex-col gap-1 w-full ${widthClasses}`}>
                     <div
-                      className="relative w-full aspect-[4/3] overflow-hidden cursor-pointer bg-transparent group"
+                      className="relative aspect-[4/3] w-full overflow-hidden cursor-pointer group bg-transparent"
                       onClick={() => setSelectedView(src)}
                     >
                       <Image
@@ -375,10 +383,12 @@ export default function ProjectDetail({ params }) {
                       />
                     </div>
                     <div className="text-center px-2">
-                      <h4 className="text-[16px] md:text-[18px] text-brand-dark mb-3" style={{ fontFamily: '"Canela Light Trial", serif' }}>
+                      <h4 className="text-[12px] md:text-[15px] text-brand-dark mb-2" style={{ fontFamily: '"Canela Light Trial", serif' }}>
                         {title}
                       </h4>
-                      <p className="font-sans text-[12px] md:text-[13px] text-brand-dark/80 font-light leading-relaxed max-w-[280px] mx-auto">
+                      <p className="font-sans md:px-10 lg:px-20 text-[12px] md:text-[13px] text-brand-dark/80  font-light leading-relaxed"
+                      style={{ fontFamily: '"Freight Text", serif' }}
+                      >
                         {desc}
                       </p>
                     </div>
