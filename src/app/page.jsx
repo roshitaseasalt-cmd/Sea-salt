@@ -1,24 +1,30 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import PageLoader from "@/components/common/PageLoader";
+import AudioConsent from "@/components/common/AudioConsent";
 import { useLoadingManager } from "@/hooks/useLoadingManager";
 
 export default function Home() {
   // Use our centralized loading manager with a 4.5s fallback timeout
   const { isFullyLoaded, handleVideoReady } = useLoadingManager(4500);
+  const videoRef = useRef(null);
 
   return (
     <>
       {/* Full-page Luxury Loader */}
       <PageLoader isLoading={!isFullyLoaded} />
+      
+      {/* Audio Consent Popup */}
+      <AudioConsent videoRef={videoRef} isVisible={isFullyLoaded} />
 
       <div className="flex-1 relative overflow-hidden bg-zinc-900 select-none">
         
         {/* Background Atmosphere Video */}
         <video
+          ref={videoRef}
           src="/Home page video.mp4"
           autoPlay
           loop
