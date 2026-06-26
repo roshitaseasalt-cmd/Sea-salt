@@ -49,6 +49,8 @@ export default function Header() {
           onClick={() => setMenuOpen(!menuOpen)}
           className="flex flex-col gap-1.5 justify-center items-start group p-2 -ml-2 focus:outline-none z-20"
           aria-label="Toggle Navigation Menu"
+          aria-expanded={menuOpen}
+          aria-controls="mobile-navigation-menu"
         >
           <motion.span
             animate={
@@ -102,6 +104,7 @@ export default function Header() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
+            id="mobile-navigation-menu"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

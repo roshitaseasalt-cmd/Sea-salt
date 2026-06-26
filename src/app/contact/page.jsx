@@ -81,13 +81,13 @@ export default function Contact() {
                   </p>
                 </div>
 
-                <div className="flex flex-col space-y-8 md:space-y-10">
+                <address className="flex flex-col space-y-8 md:space-y-10 not-italic">
                   <div className="flex flex-col space-y-2.5">
                     <span className="font-sans text-[9px] sm:text-[10px] tracking-[0.2em] text-brand-dark/80 uppercase font-bold">
                       EMAIL
                     </span>
                     <a
-                      href="mailto:roshitasudhir@gmail.com"
+                      href="mailto:roshita.seasalt@gmail.com"
                       className="text-[15px] sm:text-[16px] md:text-[17px] text-brand-dark hover:text-amber-800 transition-colors"
                       style={{ fontFamily: '"Freight Text", serif' }}
                     >
@@ -122,7 +122,7 @@ export default function Contact() {
                       @seasalt.architecture
                     </a>
                   </div>
-                </div>
+                </address>
               </motion.div>
 
             </div>

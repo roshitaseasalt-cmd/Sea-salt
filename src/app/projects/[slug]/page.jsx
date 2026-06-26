@@ -381,9 +381,9 @@ export default function ProjectDetail({ params }) {
           <section className="w-full px-2 sm:px-6 md:px-10 mb-16 md:mb-24">
             <div className="flex items-center gap-4 mb-8">
               <div className="w-4 sm:w-6 h-px bg-[#122660]" />
-              <h3 className="font-sans text-[10px] sm:text-[11px] tracking-[0.25em] uppercase font-normal text-[#122660]">
+              <h2 className="font-sans text-[10px] sm:text-[11px] tracking-[0.25em] uppercase font-normal text-[#122660]">
                 SPATIAL SYSTEMS
-              </h3>
+              </h2>
             </div>
             
             <div className="flex flex-wrap justify-center gap-2 sm:gap-4 lg:gap-6">
@@ -415,9 +415,9 @@ export default function ProjectDetail({ params }) {
                       />
                     </div>
                     <div className="text-center px-2">
-                      <h4 className="text-[12px] md:text-[15px] text-brand-dark mb-2" style={{ fontFamily: '"Canela Light Trial", serif' }}>
+                      <h3 className="text-[12px] md:text-[15px] text-brand-dark mb-2" style={{ fontFamily: '"Canela Light Trial", serif' }}>
                         {title}
-                      </h4>
+                      </h3>
                       <p className="font-sans md:px-10 lg:px-20 text-[12px] md:text-[13px] text-brand-dark/80  font-light leading-relaxed"
                       style={{ fontFamily: '"Freight Text", serif' }}
                       >
@@ -436,9 +436,9 @@ export default function ProjectDetail({ params }) {
           <section className="w-full max-w-screen-xl mx-auto px-6 sm:px-10 md:px-14 lg:px-16 mb-8 md:mb-24">
             <div className="flex items-center gap-4 mb-8">
               <div className="w-4 sm:w-6 h-px bg-[#122660]" />
-              <h3 className="font-sans text-[10px] sm:text-[11px] tracking-[0.25em] uppercase font-normal text-[#122660]">
+              <h2 className="font-sans text-[10px] sm:text-[11px] tracking-[0.25em] uppercase font-normal text-[#122660]">
                 MOMENTS
-              </h3>
+              </h2>
             </div>
 
             <div
@@ -542,6 +542,9 @@ export default function ProjectDetail({ params }) {
           {/* View Modal */}
           {selectedView && (
             <motion.div
+              role="dialog"
+              aria-modal="true"
+              aria-label="Enlarged Project View"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -549,6 +552,7 @@ export default function ProjectDetail({ params }) {
               className="fixed inset-0 z-[100] flex items-center justify-center bg-[#f4f1ec]/95 backdrop-blur-sm p-4 sm:p-10 cursor-zoom-out"
             >
               <button
+                aria-label="Close modal"
                 onClick={() => setSelectedView(null)}
                 className="absolute top-6 right-6 sm:top-10 sm:right-10 text-brand-dark hover:opacity-70 transition-opacity z-[101]"
               >
@@ -571,6 +575,7 @@ export default function ProjectDetail({ params }) {
               {project?.images?.views?.includes(selectedView) && (
                 <>
                   <button
+                    aria-label="Previous view"
                     onClick={handlePrevView}
                     className="absolute left-4 sm:left-10 top-1/2 -translate-y-1/2 text-brand-dark hover:opacity-70 transition-opacity z-[101] p-4 cursor-pointer"
                   >
@@ -589,6 +594,7 @@ export default function ProjectDetail({ params }) {
                     </svg>
                   </button>
                   <button
+                    aria-label="Next view"
                     onClick={handleNextView}
                     className="absolute right-4 sm:right-10 top-1/2 -translate-y-1/2 text-brand-dark hover:opacity-70 transition-opacity z-[101] p-4 cursor-pointer"
                   >
@@ -631,6 +637,9 @@ export default function ProjectDetail({ params }) {
           {/* Moment Gallery Modal */}
           {selectedMomentIndex !== null && project.images?.moments && (
             <motion.div
+              role="dialog"
+              aria-modal="true"
+              aria-label="Enlarged Moment View"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -638,6 +647,7 @@ export default function ProjectDetail({ params }) {
               className="fixed inset-0 z-[100] flex items-center justify-center bg-[#f4f1ec]/95 backdrop-blur-sm p-4 sm:p-10 cursor-zoom-out"
             >
               <button
+                aria-label="Close modal"
                 onClick={() => setSelectedMomentIndex(null)}
                 className="absolute top-6 right-6 sm:top-10 sm:right-10 text-brand-dark hover:opacity-70 transition-opacity z-[101]"
               >
@@ -658,6 +668,7 @@ export default function ProjectDetail({ params }) {
 
               {/* Prev Button */}
               <button
+                aria-label="Previous moment"
                 onClick={handlePrevMoment}
                 className="absolute left-4 sm:left-10 top-1/2 -translate-y-1/2 text-brand-dark hover:opacity-70 transition-opacity z-[101] p-4 cursor-pointer"
               >
@@ -678,6 +689,7 @@ export default function ProjectDetail({ params }) {
 
               {/* Next Button */}
               <button
+                aria-label="Next moment"
                 onClick={handleNextMoment}
                 className="absolute right-4 sm:right-10 top-1/2 -translate-y-1/2 text-brand-dark hover:opacity-70 transition-opacity z-[101] p-4 cursor-pointer"
               >

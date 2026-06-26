@@ -58,12 +58,15 @@ function ProjectsList() {
             <div className="pt-2 select-none">
               <button
                 onClick={toggleTab}
-                className="w-11 h-11 rounded-full  bg-transparent hover:bg-[#dad7d1]/35 hover:border-bratext-brand-dark/40 transition-all duration-300 text-brand-dark flex items-center justify-center focus:outline-none group cursor-pointer shadow-none relative"
+                role="switch"
+                aria-checked={activeTab === "interiors"}
+                aria-label={`Toggle to ${activeTab === "architecture" ? "Interiors" : "Architecture"} Projects`}
+                className="w-11 h-11 rounded-full bg-transparent hover:bg-[#dad7d1]/35 hover:border-brand-dark/40 transition-all duration-300 text-brand-dark flex items-center justify-center focus:outline-none group cursor-pointer shadow-none relative"
                 title={`Switch to ${activeTab === "architecture" ? "Interiors" : "Architecture"}`}
               >
                 <Image
                   src="/icons/TOGGLE ICON.png"
-                  alt="Toggle icon"
+                  alt="Toggle project category icon"
                   width={96}
                   height={96}
                   className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 max-w-none object-cover transition-transform duration-700 ease-out ${activeTab === "interiors" ? "rotate-180" : "rotate-0"}`}
