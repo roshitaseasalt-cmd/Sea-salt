@@ -4,7 +4,6 @@ import React, { useRef } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import PageLoader from "@/components/common/PageLoader";
-import AudioConsent from "@/components/common/AudioConsent";
 import { useLoadingManager } from "@/hooks/useLoadingManager";
 
 export default function Home() {
@@ -16,9 +15,6 @@ export default function Home() {
     <>
       {/* Full-page Luxury Loader */}
       <PageLoader isLoading={!isFullyLoaded} />
-      
-      {/* Audio Consent Popup */}
-      <AudioConsent videoRef={videoRef} isVisible={isFullyLoaded} />
 
       <div className="flex-1 relative overflow-hidden bg-zinc-900 select-none">
         
