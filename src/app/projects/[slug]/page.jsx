@@ -40,6 +40,34 @@ export default function ProjectDetail({ params }) {
     [project],
   );
 
+  const handleNextView = useCallback(
+    (e) => {
+      if (e) e.stopPropagation();
+      if (project?.images?.views && selectedView) {
+        const currentIndex = project.images.views.indexOf(selectedView);
+        if (currentIndex !== -1) {
+          const nextIndex = currentIndex === project.images.views.length - 1 ? 0 : currentIndex + 1;
+          setSelectedView(project.images.views[nextIndex]);
+        }
+      }
+    },
+    [project, selectedView],
+  );
+
+  const handlePrevView = useCallback(
+    (e) => {
+      if (e) e.stopPropagation();
+      if (project?.images?.views && selectedView) {
+        const currentIndex = project.images.views.indexOf(selectedView);
+        if (currentIndex !== -1) {
+          const prevIndex = currentIndex === 0 ? project.images.views.length - 1 : currentIndex - 1;
+          setSelectedView(project.images.views[prevIndex]);
+        }
+      }
+    },
+    [project, selectedView],
+  );
+
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (selectedView !== null || selectedMomentIndex !== null) {
@@ -52,10 +80,14 @@ export default function ProjectDetail({ params }) {
         if (e.key === "ArrowRight") handleNextMoment();
         if (e.key === "ArrowLeft") handlePrevMoment();
       }
+      if (selectedView !== null && project?.images?.views?.includes(selectedView)) {
+        if (e.key === "ArrowRight") handleNextView();
+        if (e.key === "ArrowLeft") handlePrevView();
+      }
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [selectedView, selectedMomentIndex, handleNextMoment, handlePrevMoment]);
+  }, [selectedView, selectedMomentIndex, handleNextMoment, handlePrevMoment, handleNextView, handlePrevView, project]);
 
   // Prevent scrolling when modal is open
   useEffect(() => {
@@ -534,12 +566,56 @@ export default function ProjectDetail({ params }) {
                   />
                 </svg>
               </button>
+
+              {/* Prev/Next Buttons for Views (only if in views gallery) */}
+              {project?.images?.views?.includes(selectedView) && (
+                <>
+                  <button
+                    onClick={handlePrevView}
+                    className="absolute left-4 sm:left-10 top-1/2 -translate-y-1/2 text-brand-dark hover:opacity-70 transition-opacity z-[101] p-4 cursor-pointer"
+                  >
+                    <svg
+                      className="w-8 h-8 sm:w-12 sm:h-12"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1}
+                        d="M15 19l-7-7 7-7"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    onClick={handleNextView}
+                    className="absolute right-4 sm:right-10 top-1/2 -translate-y-1/2 text-brand-dark hover:opacity-70 transition-opacity z-[101] p-4 cursor-pointer"
+                  >
+                    <svg
+                      className="w-8 h-8 sm:w-12 sm:h-12"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </button>
+                </>
+              )}
+
               <motion.div
-                initial={{ scale: 0.95, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.95, opacity: 0 }}
+                key={selectedView}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                className="relative w-full max-w-6xl aspect-[16/9] max-h-[90vh]"
+                className="relative w-full max-w-6xl aspect-[16/9] max-h-[90vh] cursor-default"
                 onClick={(e) => e.stopPropagation()}
               >
                 <Image
