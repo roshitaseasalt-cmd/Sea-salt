@@ -20,9 +20,9 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
-  title: "Sea Salt Studio | Architecture, Interiors & Landscapes | Ernakulam & Bangalore",
-  description: "Creating architecture, interiors and landscapes that are rooted in atmosphere, material sensitivity and lived experience. Serving Ernakulam, Kochi, and Bangalore regions.",
-  keywords: ["Architecture", "Interiors", "Landscape", "Ernakulam", "Kochi", "Bangalore", "Bengaluru", "Sea Salt Architecture", "Sea Salt Interiors", "Sea Salt Landscapes", "Architects in Ernakulam", "Architects in Bangalore"],
+  title: "Sea Salt Studio | Architecture & Interiors | Ernakulam & Bangalore",
+  description: "Creating architecture and interiors rooted in atmosphere, material sensitivity, and lived experience.",
+  keywords: ["Architecture", "Interiors", "Landscape", "Ernakulam", "Kochi", "Bangalore", "Bengaluru", "Sea Salt Architecture", "Sea Salt Interiors", "Sea Salt Landscapes", "Architects in Ernakulam","sea salt" ,"Architects in Bangalore"],
 };
 
 export default function RootLayout({ children }) {
