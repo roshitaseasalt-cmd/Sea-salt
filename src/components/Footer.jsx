@@ -26,7 +26,7 @@ export default function Footer() {
             style={{ fontFamily: '"Freight Text", serif' }}
           >
             <a
-              href="https://instagram.com"
+              href="https://instagram.com/seasalt.architecture"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-brand-dark transition-colors"
@@ -35,7 +35,7 @@ export default function Footer() {
             </a>
             <span className="text-brand-dark/40">|</span>
             <a
-              href="mailto:hello@seasaltstudio.com"
+              href="mailto:roshita.seasalt@gmail.com"
               className="hover:text-brand-dark transition-colors"
             >
               Email

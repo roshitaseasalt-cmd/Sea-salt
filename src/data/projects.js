@@ -4,11 +4,10 @@ export const projectsData = {
       slug: "sri-aurobindo-integral-life-center",
       title: "Sri Aurobindo Life Center",
       location: "Surat, India",
-      client: "Sri Aurobindo Life Center Trust",
       status: "Built",
       role: "Project Architect",
       architect: "Studio Naqshbandi, Auroville",
-      year: "2016",
+      year: "2023",
       category: "Architecture",
       details:
         "Conceived as a meditative landscape of water, light and movement, the Sri Aurobindo Life Center unfolds through a sequence of courts, bridges and reflective thresholds.",
@@ -25,19 +24,19 @@ export const projectsData = {
         moments: [
           {
             src: "/projects/01. Sri Aurobindo Life Center_ARCHITECTURE/04. Moments 01.png",
-            caption: "Framed views",
+            caption: "Framed stillness",
           },
           {
             src: "/projects/01. Sri Aurobindo Life Center_ARCHITECTURE/04. Moments 02.png",
-            caption: "Thresholds",
+            caption: "Filtered garden",
           },
           {
             src: "/projects/01. Sri Aurobindo Life Center_ARCHITECTURE/04. Moments 03 .png",
-            caption: "Landscape integration",
+            caption: "Reflective edge",
           },
           {
             src: "/projects/01. Sri Aurobindo Life Center_ARCHITECTURE/04. Moments 04.png",
-            caption: "Light and shadow",
+            caption: "Water offering",
           },
         ],
       },
@@ -46,12 +45,13 @@ export const projectsData = {
       slug: "house-of-courts",
       title: "House of Courts",
       location: "Hyderabad, India",
+      status: "Schematic stage",
       role: "Project Architect",
-      architect: "Stapati, Bangalore",
-      year: "2025",
+      architect: "Stapati, Bengaluru",
+      year: "2024",
       category: "Architecture",
       details:
-        "A premium private residence constructed using raw brick lattices and central courtyard layout systems to facilitate natural ventilation.",
+        "Organised as a series of courts and pavilions, the house dissolves the boundaries between built and green. Light, shade and plants shape a rhythm of living in harmony.",
       images: {
         hero: "/projects/02. House of Courts_ARCHITECTURE/01. Hero Image.png",
         plan: "/projects/02. House of Courts_ARCHITECTURE/02. Drawing 01.png",
@@ -63,42 +63,46 @@ export const projectsData = {
         moments: [
           {
             src: "/projects/02. House of Courts_ARCHITECTURE/05. Moments 01.jpg",
-            caption: "Brick lattices",
+            caption: "Patina",
           },
           {
             src: "/projects/02. House of Courts_ARCHITECTURE/05. Moments 02.jpg",
-            caption: "Central courtyard",
+            caption: "Copper lattice",
           },
           {
             src: "/projects/02. House of Courts_ARCHITECTURE/05. Moments 03.jpg",
-            caption: "Natural ventilation",
+            caption: "Columns in stillness",
           },
           {
             src: "/projects/02. House of Courts_ARCHITECTURE/05. Moments 04.jpg",
-            caption: "Raw materials",
+            caption: "Teak veil",
           },
         ],
-        sectionDrawing: "/projects/02. House of Courts_ARCHITECTURE/Section Drawing.png",
+        sectionDrawing:
+          "/projects/02. House of Courts_ARCHITECTURE/Section Drawing.png",
       },
-      blockquote: "A home defined by its courts — where architecture, landscape and light exist in quiet balance.",
+      blockquote:
+        "A home defined by its courts — where architecture, landscape and light exist in quiet balance.",
     },
     {
       slug: "residence-at-hospet",
       title: "Residence at Hospet",
       location: "Karnataka, India",
       role: "Project Lead",
+      status: "Schematic stage",
       architect: "Malik Architecture, Mumbai",
-      year: "2024",
+      year: "2022",
       category: "Architecture",
       details:
-        "An architectural exploration using massive local granite blocks and concrete canopies looking out onto a landscape pool.",
+        "Perched atop a pristine hill, the residence unfolds as a series of stone volumes shaped by terrain, light and views.",
       images: {
         hero: "/projects/03. Residence at Hospet_ARCHITECTURE/01. Hero Image.jpg",
         plan: "/projects/03. Residence at Hospet_ARCHITECTURE/02. Drawing.png",
         views: [
-          "/projects/03. Residence at Hospet_ARCHITECTURE/03.Long strip view.png",
+          "/projects/03. Residence at Hospet_ARCHITECTURE/interior-view.jpg",
           "/projects/03. Residence at Hospet_ARCHITECTURE/04.Spatial system 01.png",
           "/projects/03. Residence at Hospet_ARCHITECTURE/04.Spatial system 02.png",
+          "/projects/03. Residence at Hospet_ARCHITECTURE/03.Long strip view.png",
         ],
         moments: [
           {
@@ -119,7 +123,8 @@ export const projectsData = {
           },
         ],
       },
-      blockquote: "Architecture emerges from place, shaped by light, wind and the passage of time.",
+      blockquote:
+        "Architecture emerges from place, shaped by light, wind and the passage of time.",
     },
     {
       slug: "resort-at-kalimpong",
@@ -157,7 +162,8 @@ export const projectsData = {
           },
         ],
       },
-      blockquote: "Atmosphere emerges through materials, proportion and movement.",
+      blockquote:
+        "Atmosphere emerges through materials, proportion and movement.",
     },
   ],
   interiors: [
@@ -168,7 +174,7 @@ export const projectsData = {
       status: "Built",
       scope: "Interior Design",
       role: "Interior Design",
-      architect: "Collective Project, Bangalore",
+      architect: "Collective Project, Bengaluru",
       year: "2023",
       category: "Interiors",
       details:
@@ -239,7 +245,8 @@ export const projectsData = {
           },
         ],
       },
-      blockquote: "A space designed to soften anxiety through light, calm and care.",
+      blockquote:
+        "A space designed to soften anxiety through light, calm and care.",
     },
   ],
 };

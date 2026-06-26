@@ -95,7 +95,7 @@ export default function Contact() {
                       className="text-[15px] sm:text-[16px] md:text-[17px] text-brand-dark hover:text-amber-800 transition-colors"
                       style={{ fontFamily: '"Freight Text", serif' }}
                     >
-                      roshitasudhir@gmail.com
+                      roshita.seasalt@gmail.com
                     </a>
                   </div>
 

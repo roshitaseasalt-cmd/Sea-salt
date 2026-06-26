@@ -16,19 +16,29 @@ export default function ProjectDetail({ params }) {
   const [selectedView, setSelectedView] = useState(null);
   const [selectedMomentIndex, setSelectedMomentIndex] = useState(null);
 
-  const handleNextMoment = useCallback((e) => {
-    if (e) e.stopPropagation();
-    if (project?.images?.moments) {
-      setSelectedMomentIndex((prev) => (prev === project.images.moments.length - 1 ? 0 : prev + 1));
-    }
-  }, [project]);
+  const handleNextMoment = useCallback(
+    (e) => {
+      if (e) e.stopPropagation();
+      if (project?.images?.moments) {
+        setSelectedMomentIndex((prev) =>
+          prev === project.images.moments.length - 1 ? 0 : prev + 1,
+        );
+      }
+    },
+    [project],
+  );
 
-  const handlePrevMoment = useCallback((e) => {
-    if (e) e.stopPropagation();
-    if (project?.images?.moments) {
-      setSelectedMomentIndex((prev) => (prev === 0 ? project.images.moments.length - 1 : prev - 1));
-    }
-  }, [project]);
+  const handlePrevMoment = useCallback(
+    (e) => {
+      if (e) e.stopPropagation();
+      if (project?.images?.moments) {
+        setSelectedMomentIndex((prev) =>
+          prev === 0 ? project.images.moments.length - 1 : prev - 1,
+        );
+      }
+    },
+    [project],
+  );
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -111,14 +121,12 @@ export default function ProjectDetail({ params }) {
 
           {/* Hero Text */}
           <div className="absolute inset-0 flex flex-col justify-end w-full pb-10 sm:pb-16 max-w-screen-xl mx-auto px-6 sm:px-10 md:px-14 lg:px-16 text-white z-10">
-            <h1 
-              className="text-[30px] sm:text-[40px] md:text-[52px] lg:text-[62px] mb-2 md:mb-4 leading-none font-cormorant"
-            >
+            <h1 className="text-[30px] sm:text-[40px] md:text-[48px] lg:text-[56px] mb-2 md:mb-4 leading-none font-cormorant">
               {project.title}
             </h1>
 
             <p
-              className="text-[15px] sm:text-[16px] md:text-[17px] opacity-90 mb-5 md:mb-8"
+              className="text-[15px] sm:text-[16px] md:text-[17px] font-freight opacity-90 mb-5 md:mb-8"
               style={{ fontFamily: '"Freight Text", serif' }}
             >
               {project.location}
@@ -140,8 +148,9 @@ export default function ProjectDetail({ params }) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
             {/* Left Column: Description & Metadata */}
             <div className="lg:col-span-5 flex flex-col gap-12 lg:gap-20 lg:border-r lg:border-warm-grey lg:pr-10">
-              <p 
+              <p
                 className="text-[12px] sm:text-[15px] md:text-[18px] leading-[1.65] text-brand-dark font-montserrat font-light"
+                style={{ fontFamily: '"Freight Text", serif' }}
               >
                 {project.details}
               </p>
@@ -232,12 +241,19 @@ export default function ProjectDetail({ params }) {
             <div className="lg:col-span-7 flex flex-col items-center justify-center relative min-h-[400px]">
               {project.images?.plan ? (
                 <>
-                  {["house-of-courts", "residence-at-hospet", "resort-at-kalimpong"].includes(project.slug) && (
+                  {[
+                    "house-of-courts",
+                    "residence-at-hospet",
+                    "resort-at-kalimpong",
+                  ].includes(project.slug) && (
                     <div className="absolute top-0 right-0 flex flex-col items-center opacity-60 z-10">
                       <svg
                         className={`w-5 h-5 ${
-                          project.slug === "house-of-courts" ? "rotate-90" :
-                          project.slug === "resort-at-kalimpong" ? "rotate-180" : ""
+                          project.slug === "house-of-courts"
+                            ? "rotate-90"
+                            : project.slug === "resort-at-kalimpong"
+                              ? "rotate-180"
+                              : ""
                         }`}
                         viewBox="0 0 24 24"
                         fill="none"
@@ -252,7 +268,10 @@ export default function ProjectDetail({ params }) {
                       </svg>
                     </div>
                   )}
-                  <div className="relative w-full h-full min-h-[300px] md:min-h-[450px]">
+                  <div
+                    className="relative w-full h-full min-h-[300px] md:min-h-[450px] cursor-pointer"
+                    onClick={() => setSelectedView(project.images.plan)}
+                  >
                     <Image
                       src={project.images.plan}
                       alt="Plan Drawing"
@@ -275,53 +294,104 @@ export default function ProjectDetail({ params }) {
         </section>
 
         {/* 3. Views Gallery */}
-        {project.slug !== "resort-at-kalimpong" && project.images?.views && project.images.views.length > 0 && (
-          <section className="w-full px-2 sm:px-6 md:px-10 mb-16 md:mb-24">
-            <div className="flex flex-wrap justify-center gap-2 sm:gap-4 lg:gap-6">
-              {project.images.views.map((src, index) => (
-                <div
-                  key={index}
-                  className={`relative aspect-[4/3] w-full overflow-hidden bg-brand-dark/5 cursor-pointer group ${
-                    project.images.views.length === 2 
-                      ? "md:w-[calc((100%-1rem)/2)] lg:w-[calc((100%-1.5rem)/2)]"
-                      : "md:w-[calc((100%-2rem)/3)] lg:w-[calc((100%-3rem)/3)]"
-                  }`}
-                  onClick={() => setSelectedView(src)}
-                >
-                  <Image
-                    src={src}
-                    alt={`${project.title} View ${index + 1}`}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover"
-                  />
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
+        {project.slug !== "resort-at-kalimpong" && project.slug !== "residence-at-hospet" &&
+          project.images?.views &&
+          project.images.views.length > 0 && (
+            <section className="w-full px-2 sm:px-6 md:px-10 mb-16 md:mb-24">
+              <div className="flex flex-wrap justify-center gap-2 sm:gap-4 lg:gap-6">
+                {project.images.views.map((src, index) => (
+                  <div
+                    key={index}
+                    className={`relative aspect-[4/3] w-full overflow-hidden  cursor-pointer group bg-amber-100 ${
+                      project.images.views.length === 2
+                        ? "md:w-[calc((100%-1rem)/2)] lg:w-[calc((100%-1.5rem)/2)]"
+                        : "md:w-[calc((100%-2rem)/3)] lg:w-[calc((100%-3rem)/3)]"
+                    }`}
+                    onClick={() => setSelectedView(src)}
+                  >
+                    <Image
+                      src={src}
+                      alt={`${project.title} View ${index + 1}`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
 
-        {/* Resort at Kalimpong - First View */}
-        {project.slug === "resort-at-kalimpong" && project.images?.views?.[0] && (
+        {/* Long Views (Kalimpong & Hospet) */}
+        {(project.slug === "resort-at-kalimpong" || project.slug === "residence-at-hospet") &&
+          project.images?.views?.[0] && (
+            <section className="w-full max-w-screen-xl mx-auto px-6 sm:px-10 md:px-14 lg:px-16 mb-16 md:mb-24">
+              <div
+                className="relative w-full aspect-[2/1] lg:aspect-[21/9] cursor-pointer"
+                onClick={() => setSelectedView(project.images.views[0])}
+              >
+                <Image
+                  src={project.images.views[0]}
+                  alt={`${project.title} View 1`}
+                  fill
+                  sizes="(max-width: 1280px) 100vw, 1280px"
+                  className="object-cover"
+                />
+              </div>
+            </section>
+          )}
+
+        {/* Residence at Hospet - Spatial Systems */}
+        {project.slug === "residence-at-hospet" && project.images?.views?.length > 1 && (
           <section className="w-full max-w-screen-xl mx-auto px-6 sm:px-10 md:px-14 lg:px-16 mb-16 md:mb-24">
-            <div 
-              className="relative w-full aspect-[2/1] lg:aspect-[21/9] cursor-pointer"
-              onClick={() => setSelectedView(project.images.views[0])}
-            >
-              <Image
-                src={project.images.views[0]}
-                alt={`${project.title} View 1`}
-                fill
-                sizes="(max-width: 1280px) 100vw, 1280px"
-                className="object-cover"
-              />
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-4 sm:w-6 h-px bg-[#122660]" />
+              <h3 className="font-sans text-[10px] sm:text-[11px] tracking-[0.25em] uppercase font-normal text-[#122660]">
+                SPATIAL SYSTEMS
+              </h3>
+            </div>
+            
+            <div className="flex flex-wrap justify-center md:justify-start gap-8 lg:gap-12">
+              {project.images.views.slice(1).map((src, index) => {
+                const title = index === 0 ? "Coffered Slab" : index === 1 ? "Jack Arch" : "Vault";
+                const desc = index === 0 
+                  ? "A coffered concrete slab reduces structural depth while creating a calm, rhythmic ceiling."
+                  : index === 1
+                  ? "Jack arches span between supports to create wide column-free spaces and frame the view."
+                  : "A vaulted entry compresses the approach and opens toward the horizon.";
+
+                return (
+                  <div key={index} className="flex flex-col gap-6 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)] max-w-sm">
+                    <div
+                      className="relative w-full aspect-[4/3] overflow-hidden cursor-pointer bg-transparent group"
+                      onClick={() => setSelectedView(src)}
+                    >
+                      <Image
+                        src={src}
+                        alt={title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        className="object-contain"
+                      />
+                    </div>
+                    <div className="text-center px-2">
+                      <h4 className="text-[16px] md:text-[18px] text-brand-dark mb-3" style={{ fontFamily: '"Canela Light Trial", serif' }}>
+                        {title}
+                      </h4>
+                      <p className="font-sans text-[12px] md:text-[13px] text-brand-dark/80 font-light leading-relaxed max-w-[280px] mx-auto">
+                        {desc}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </section>
         )}
 
         {/* 4. Moments Gallery */}
         {project.images?.moments && project.images.moments.length > 0 && (
-          <section className="w-full max-w-screen-xl mx-auto px-6 sm:px-10 md:px-14 lg:px-16 mb-24 md:mb-32">
+          <section className="w-full max-w-screen-xl mx-auto px-6 sm:px-10 md:px-14 lg:px-16 mb-8 md:mb-24">
             <div className="flex items-center gap-4 mb-8">
               <div className="w-4 sm:w-6 h-px bg-[#122660]" />
               <h3 className="font-sans text-[10px] sm:text-[11px] tracking-[0.25em] uppercase font-normal text-[#122660]">
@@ -334,7 +404,7 @@ export default function ProjectDetail({ params }) {
             >
               {project.images.moments.map((moment, index) => (
                 <div key={index} className="flex flex-col gap-3">
-                  <div 
+                  <div
                     className="relative aspect-[4/3] w-full overflow-hidden bg-brand-dark/5 cursor-pointer group"
                     onClick={() => setSelectedMomentIndex(index)}
                   >
@@ -359,27 +429,31 @@ export default function ProjectDetail({ params }) {
         )}
 
         {/* Resort at Kalimpong - Second View */}
-        {project.slug === "resort-at-kalimpong" && project.images?.views?.[1] && (
-          <section className="w-full max-w-screen-xl mx-auto px-6 sm:px-10 md:px-14 lg:px-16 mb-16 md:mb-24">
-            <div 
-              className="relative w-full aspect-[2/1] lg:aspect-[21/9] cursor-pointer"
-              onClick={() => setSelectedView(project.images.views[1])}
-            >
-              <Image
-                src={project.images.views[1]}
-                alt={`${project.title} View 2`}
-                fill
-                sizes="(max-width: 1280px) 100vw, 1280px"
-                className="object-contain"
-              />
-            </div>
-          </section>
-        )}
+        {project.slug === "resort-at-kalimpong" &&
+          project.images?.views?.[1] && (
+            <section className="w-full max-w-screen-xl mx-auto px-6 sm:px-10 md:px-14 lg:px-16 mb-16 md:mb-24">
+              <div
+                className="relative w-full aspect-[2/1] lg:aspect-[21/9] cursor-pointer"
+                onClick={() => setSelectedView(project.images.views[1])}
+              >
+                <Image
+                  src={project.images.views[1]}
+                  alt={`${project.title} View 2`}
+                  fill
+                  sizes="(max-width: 1280px) 100vw, 1280px"
+                  className="object-contain"
+                />
+              </div>
+            </section>
+          )}
 
         {/* Section Drawing */}
         {project.images?.sectionDrawing && (
-          <section className="w-full max-w-screen-xl mb-16 mx-auto px-6 sm:px-10 md:px-14 lg:px-16">
-            <div className="w-full drop-shadow-[0_15px_10px_rgba(0,0,0,0.1)]">
+          <section className="w-full max-w-screen-xl mb-16 md:mb-28 mx-auto px-6 sm:px-10 md:px-14 lg:px-16">
+            <div
+              className="w-full drop-shadow-[0_15px_10px_rgba(0,0,0,0.1)] cursor-pointer"
+              onClick={() => setSelectedView(project.images.sectionDrawing)}
+            >
               <Image
                 src={project.images.sectionDrawing}
                 alt={`${project.title} Section Drawing`}
@@ -403,7 +477,7 @@ export default function ProjectDetail({ params }) {
                 “
               </div>
               <p
-                className="text-[12px] sm:text-[14px] md:text-[16px] leading-[1.5] text-brand-dark/90 text-left"
+                className="text-[14px] sm:text-[16px] md:text-[20px] leading-[1.5] text-brand-dark/90 text-left"
                 style={{ fontFamily: '"Canela Light Trial", serif' }}
               >
                 {project.blockquote}
@@ -436,8 +510,18 @@ export default function ProjectDetail({ params }) {
                 onClick={() => setSelectedView(null)}
                 className="absolute top-6 right-6 sm:top-10 sm:right-10 text-brand-dark hover:opacity-70 transition-opacity z-[101]"
               >
-                <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M6 18L18 6M6 6l12 12" />
+                <svg
+                  className="w-8 h-8"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={1}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 </svg>
               </button>
               <motion.div
@@ -471,18 +555,38 @@ export default function ProjectDetail({ params }) {
                 onClick={() => setSelectedMomentIndex(null)}
                 className="absolute top-6 right-6 sm:top-10 sm:right-10 text-brand-dark hover:opacity-70 transition-opacity z-[101]"
               >
-                <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M6 18L18 6M6 6l12 12" />
+                <svg
+                  className="w-8 h-8"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={1}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 </svg>
               </button>
-              
+
               {/* Prev Button */}
               <button
                 onClick={handlePrevMoment}
                 className="absolute left-4 sm:left-10 top-1/2 -translate-y-1/2 text-brand-dark hover:opacity-70 transition-opacity z-[101] p-4 cursor-pointer"
               >
-                <svg className="w-8 h-8 sm:w-12 sm:h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M15 19l-7-7 7-7" />
+                <svg
+                  className="w-8 h-8 sm:w-12 sm:h-12"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={1}
+                    d="M15 19l-7-7 7-7"
+                  />
                 </svg>
               </button>
 
@@ -491,8 +595,18 @@ export default function ProjectDetail({ params }) {
                 onClick={handleNextMoment}
                 className="absolute right-4 sm:right-10 top-1/2 -translate-y-1/2 text-brand-dark hover:opacity-70 transition-opacity z-[101] p-4 cursor-pointer"
               >
-                <svg className="w-8 h-8 sm:w-12 sm:h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 5l7 7-7 7" />
+                <svg
+                  className="w-8 h-8 sm:w-12 sm:h-12"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={1}
+                    d="M9 5l7 7-7 7"
+                  />
                 </svg>
               </button>
 
@@ -513,7 +627,7 @@ export default function ProjectDetail({ params }) {
                     className="object-contain"
                   />
                 </div>
-                <p 
+                <p
                   className="text-center text-sm sm:text-base text-brand-dark/90 italic mt-6"
                   style={{ fontFamily: '"Canela Light Trial", serif' }}
                 >
