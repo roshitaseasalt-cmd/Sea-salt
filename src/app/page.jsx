@@ -71,13 +71,7 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Ambient decorative elements */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: isFullyLoaded ? 1 : 0 }}
-          transition={{ duration: 1.5, delay: 1.5 }}
-          className="absolute top-8 right-8 w-24 h-24 border border-white/5 rounded-full pointer-events-none" 
-        />
+        
       </div>
     </>
   );
