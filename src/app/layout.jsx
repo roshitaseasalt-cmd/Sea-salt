@@ -48,7 +48,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sea Salt Studio | Architecture & Interiors | Ernakulam & Bangalore",
+    title: "Sea Salt Studio | Architecture & Interiors | Bangalore & Ernakulam",
     description: "Creating architecture and interiors rooted in atmosphere, material sensitivity, and lived experience.",
     images: ["/sea-salt-logo.png"],
   },
